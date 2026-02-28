@@ -68,7 +68,7 @@ export default function EventDetails() {
     const exportPDF = () => {
         const doc = new jsPDF();
         autoTable(doc, {
-            head: [["Parent", "Phone", "Child Name", "Child Age"]],
+            head: [["Parent", "Phone", "Child Name", "Child Grade"]],
             body: entries.map(e => [
                 e.parentName,
                 e.phone,
@@ -120,7 +120,7 @@ export default function EventDetails() {
                                 <th className="p-4 text-left">Parent</th>
                                 <th className="p-4 text-left">Phone</th>
                                 <th className="p-4 text-left">Child's Name</th>
-                                <th className="p-4 text-left">Child's Age</th>
+                                <th className="p-4 text-left">Child's Grade</th>
                                 <th className="p-4 text-center">Delete</th>
                             </tr>
                         </thead>
