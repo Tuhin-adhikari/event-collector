@@ -212,28 +212,28 @@ export default function EventDetails() {
 
     /* ---------- EXPORT PDF ---------- */
 
-    const exportPDF = () => {
+const exportPDF = () => {
 
-        const headers = event.fields.map((f, i) => getFieldName(f, i))
+    const headers = event.fields.map((f, i) => getFieldName(f, i))
 
-        const rows = entries.map(e =>
-            headers.map(h => e[h])
-        )
+    const rows = entries.map(e =>
+        headers.map(h => e[h])
+    )
 
-        const pdf = new jsPDF()
+    const pdf = new jsPDF()
 
-        autoTable(pdf, {
-            head: [headers],
-            body: rows
-        })
+    autoTable(pdf, {
+        head: [headers],
+        body: rows
+    })
 
-        pdf.save(event.name + "_leads.pdf")
+    pdf.save(event.name + "_leads.pdf")
 
-    }
+}
 
-    /* ---------- UI ---------- */
+/* ---------- UI ---------- */
 
-    if (!event) return <div className="p-4">Loading...</div>
+if (!event) return <div className="p-4">Loading...</div>
 
     return (
 
@@ -347,11 +347,11 @@ export default function EventDetails() {
                                         Delete
                                     </button>
 
-                                </td>
+        </td>
 
-                            </tr>
+    </tr>
 
-                        ))}
+))}
 
                     </tbody>
 
